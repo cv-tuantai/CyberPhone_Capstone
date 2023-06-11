@@ -1,6 +1,7 @@
 import { getEle } from "./controller.js";
 
 export default class Validation {
+  // check rỗng
   checkEmpty = (value, errorID, mess) => {
     if (value === "") {
       getEle(errorID).innerHTML = mess;
@@ -10,6 +11,7 @@ export default class Validation {
     return true;
   };
 
+  // check dữ liệu số
   checkNumber = (value, errorID, mess) => {
     const re = /^[0-9]+$/;
 
@@ -21,6 +23,7 @@ export default class Validation {
     return false;
   };
 
+  // check selected
   checkSelected = (idSelected, errorID, mess) => {
     if (getEle(idSelected).selectedIndex > 0) {
       getEle(errorID).innerHTML = "";

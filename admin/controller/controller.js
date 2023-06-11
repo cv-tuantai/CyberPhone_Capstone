@@ -1,6 +1,5 @@
 import Phone from "../model/Phone.js";
 import Validation from "./Validation.js";
-import Api from "../services/Api.js";
 
 /* Tạo hàm để DOM ID */
 const getEle = (id) => document.getElementById(id);
