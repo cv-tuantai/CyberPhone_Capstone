@@ -95,6 +95,7 @@ small {
   background-color: $color-white-5;
   transition: all 0.25s ease-in-out;
   transform: translate(-100%, 0);
+  z-index: 99;
 }
 
 .cart__products,

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <title>Cyber Phone</title>
   <!-- Required meta tags -->
@@ -75,6 +76,13 @@
             id="addPhoneForm">
             <i class="fa-solid fa-circle-plus mr-2"></i> Add Phone
           </button>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Tên sản phẩm" id="searchName">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="btnFindProduct"><i class="fa fa-search"></i></span>
         </div>
       </div>
 
@@ -184,10 +192,11 @@
                       <span class="input-group-text"><i class="fa-solid fa-signature"></i></span>
                     </div>
                     <select class="form-control" name="chucvu" id="type">
-                      <option selected disabled>Select brand</option>
+                      <option>Select brand</option>
                       <option>Apple</option>
                       <option>Samsung</option>
                     </select>
+                  
                   </div>
 
                   <span class="sp-thongbao" id="tbtype"></span>
@@ -321,6 +330,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"
     integrity="sha512-uMtXmF28A2Ab/JJO2t/vYhlaa/3ahUOgj1Zf27M5rOo8/+fcTUVH0/E0ll68njmjrLqOBjXM3V9NiPFL5ywWPQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <!-- Main JS -->
+  <script type="module" src="../controller/main.js"></script>
 </body>
 
 </html>

@@ -208,11 +208,11 @@
               </button>
               <button class="btn yellow-btn" onclick="payNow()">Pay Now</button>
               <button
-                class="btn me-5 ms-0 px-4 red-btn"
+                class="btn mr-5 ms-0 px-4 red-btn"
                 onclick="emptyCart()"
                 id="emptyCart"
               >
-                <i class="fa-solid fa-trash me-2"></i> Empty Cart
+                <i class="fa-solid fa-trash mr-2"></i> Empty Cart
               </button>
             </div>
           </div>
@@ -335,6 +335,14 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
+
+    <script>
+      // toggle shopping cart
+      $(".js-toggle-cart, .cart__overlay").on("click", function () {
+        $(".cart").toggleClass("is-hidden");
+      });
+    </script>
+
     <!-- main CSS -->
     <script type="module" src="../controller/main.js"></script>
   </body>

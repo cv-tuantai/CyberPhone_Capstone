@@ -45,6 +45,47 @@ nav.black {
   z-index: 1;
 }
 
+.btn {
+  border: 0px;
+  color: rgba(255, 255, 255, 0.85);
+  background-color: #294d5c;
+  transition: all 0.15s;
+}
+.btn:hover {
+  outline: none;
+  background-color: #5f9db8;
+}
+.btn:focus {
+  outline: 0;
+  box-shadow: none !important;
+  box-shadow: 0 0 0 2px #404b61, inset 0 0 0 2px #ffffff;
+}
+.btn:active {
+  transform: scale(0.95);
+  background-color: #294d5c;
+}
+
+.btn-banner:hover {
+  background-color: #ffffff;
+}
+
+#btnDelete {
+  background-color: #e7380c;
+}
+#btnDelete:hover {
+  background-color: #e96949;
+}
+
+#btnEdit, #btnUpdate, #btnAddPhone {
+  background-color: #f0b80f;
+}
+
+#btnEdit:hover,
+#btnAddPhone:hover,
+#btnUpdate:hover {
+  background-color: #f1ca55;
+}
+
 header #navbarColor01 a {
   transition: 0.3s all ease-in-out;
 }
@@ -212,6 +253,7 @@ small {
   background-color: #ffffff;
   transition: all 0.25s ease-in-out;
   transform: translate(-100%, 0);
+  z-index: 99;
 }
 
 .cart__products,

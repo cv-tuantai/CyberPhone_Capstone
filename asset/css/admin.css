@@ -178,4 +178,8 @@ body {
 
 .form-group {
   margin-bottom: 0.5rem;
+}
+
+.form-control {
+  height: auto;
 }/*# sourceMappingURL=admin.css.map */
