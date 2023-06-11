@@ -1,5 +1,11 @@
 import Api from "../services/Api.js";
-import { getEle, renderUI, getInfo, clearForm } from "./controller.js";
+import {
+  getEle,
+  renderUI,
+  getInfo,
+  clearForm,
+  clearErr,
+} from "./controller.js";
 
 /* Tạo đối tượng api từ lớp đối tượng Api */
 const api = new Api();
@@ -20,6 +26,7 @@ getPhoneList();
 /* Tạo sự kiện khi click AddPhone */
 getEle("addPhoneForm").onclick = function () {
   clearForm(); //clear dữ liệu trong form
+  clearErr(); //claer thông báo lỗi
   getEle("btnAddPhone").style.display = "block"; //hiện nút Add
   getEle("btnUpdate").style.display = "none"; //ẩn nút Update
 };
@@ -55,6 +62,7 @@ window.deletePhone = deletePhone;
 
 /* Sửa sản phẩm */
 const editPhone = (id) => {
+  clearErr(); //clear thông báo lỗi
   getEle("btnAddPhone").style.display = "none"; //ẩn nút Add
   getEle("btnUpdate").style.display = "block"; //hiện nút Update
   getEle("btnUpdate").setAttribute("onclick", `updatePhone(${id})`); //lấy id cho tính năng update
@@ -82,16 +90,17 @@ window.editPhone = editPhone;
 const updatePhone = (id) => {
   // lấy dữ liệu từ form
   const phone = getInfo(id);
-
-  api
-    .callApi(`Products/${id}`, "PUT", phone)
-    .then(() => {
-      getPhoneList(); // hiện thị giao diện
-      getEle("btnClose").click(); //close modal
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+  if (phone) {
+    api
+      .callApi(`Products/${id}`, "PUT", phone)
+      .then(() => {
+        getPhoneList(); // hiện thị giao diện
+        getEle("btnClose").click(); //close modal
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
 };
 
 window.updatePhone = updatePhone;

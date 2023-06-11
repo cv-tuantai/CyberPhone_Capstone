@@ -15,14 +15,23 @@ const renderUI = (data) => {
         <tr>
             <td>${phone.id}</td>
             <td><strong>${phone.name}</strong></td>
-            <td>${phone.price}</td>
-            <td style="text-align: center"><img src="${phone.img}" alt="phone" width="80" height="80"/></td>
+            <td>${phone.price.toLocaleString("vi-VN", {
+              style: "currency",
+              currency: "VND",
+            })}</td>
+            <td style="text-align: center"><img src="${
+              phone.img
+            }" alt="phone" width="80" height="80"/></td>
             <td>${phone.desc}</td>
             <td style="text-align: center">
-                <button class="btn my-3 mr-1" data-toggle="modal" data-target="#exampleModal" onclick="editPhone(${phone.id})" id="btnEdit">
+                <button class="btn my-3 mr-1" data-toggle="modal" data-target="#exampleModal" onclick="editPhone(${
+                  phone.id
+                })" id="btnEdit">
                     Edit<i class="fa fa-pencil-square ml-2"></i>
                 </button>
-                <button id="btnDelete" class="btn" onclick ="deletePhone(${phone.id})">
+                <button id="btnDelete" class="btn" onclick ="deletePhone(${
+                  phone.id
+                })">
                     Delete <i class="fa fa-trash ml-2"></i>
                 </button></td>
         </tr>
@@ -34,7 +43,7 @@ const renderUI = (data) => {
 /* Tạo hàm để lấy thông tin sản phẩm */
 const getInfo = (id) => {
   const name = getEle("name").value;
-  const price = getEle("price").value;
+  const price = Number(getEle("price").value);
   const screen = getEle("screen").value;
   const backCam = getEle("backCam").value;
   const frontCam = getEle("frontCam").value;
@@ -54,7 +63,7 @@ const getInfo = (id) => {
 
   // Validate price
   isValid &= validation.checkNumber(
-    price,
+    "price",
     "tbprice",
     "(*)Price must be a number",
   );
@@ -116,7 +125,6 @@ const getInfo = (id) => {
     desc,
     type,
   );
-
   return phone;
 };
 
@@ -130,8 +138,10 @@ const clearForm = () => {
   getEle("img").value = "";
   getEle("desc").value = "";
   getEle("type").value = "";
+};
 
-  // clear thông báo lỗi
+/* Tạo hàm clear thông báo lỗi */
+const clearErr = () => {
   getEle("tbname").innerHTML = "";
   getEle("tbprice").innerHTML = "";
   getEle("tbscreen").innerHTML = "";
@@ -142,4 +152,4 @@ const clearForm = () => {
   getEle("tbtype").innerHTML = "";
 };
 
-export { getEle, renderUI, getInfo, clearForm };
+export { getEle, renderUI, getInfo, clearForm, clearErr };

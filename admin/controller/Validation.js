@@ -12,9 +12,9 @@ export default class Validation {
   };
 
   // check dữ liệu số
-  checkNumber = (value, errorID, mess) => {
+  checkNumber = (id, errorID, mess) => {
     const re = /^[0-9]+$/;
-
+    const value = getEle(id).value;
     if (value.match(re)) {
       getEle(errorID).innerHTML = "";
       return true;
