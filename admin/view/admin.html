@@ -163,7 +163,15 @@
             ></span>
           </button>
         </div>
-
+        <div class="col-sm-10">
+          <select class="custom-select" id="selLoai">
+            <option selected>Chọn loại</option>
+            <option value="all">Tất cả</option>
+            <option value="IP">Apple</option>
+            <option value="SS">Samsung</option>             
+          </select>
+        </div>
+        
         <div class="table-responsive">
           <table class="table display" id="myTable">
             <thead class="">
@@ -173,6 +181,7 @@
                 <th>Price</th>
                 <th>Photo</th>
                 <th>Discription</th>
+                <th>Type</th>
                 <th><em class="fa fa-cog"></em> Action</th>
               </tr>
             </thead>
@@ -325,9 +334,9 @@
                         ></span>
                       </div>
                       <select class="form-control" id="type">
-                        <option>Select brand</option>
-                        <option>Apple</option>
-                        <option>Samsung</option>
+                        <option value="">Select brand</option>
+                        <option value="IP">Apple</option>
+                        <option value="SS">Samsung</option>
                       </select>
                     </div>
 
