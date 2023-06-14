@@ -1,4 +1,4 @@
-export default class Phone {
+export default class Products {
   constructor(
     id,
     name,

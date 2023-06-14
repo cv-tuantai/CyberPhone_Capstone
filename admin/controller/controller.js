@@ -1,4 +1,4 @@
-import Phone from "../model/Phone.js";
+import Products from "../model/Products.js";
 import Validation from "./Validation.js";
 
 /* Tạo hàm để DOM ID */
@@ -15,9 +15,10 @@ const renderUI = (data) => {
         <tr>
             <td>${phone.id}</td>
             <td><strong>${phone.name}</strong></td>
-            <td>${phone.price.toLocaleString("vi-VN", {
+            <td>${phone.price.toLocaleString("en-US", {
               style: "currency",
-              currency: "VND",
+              currency: "USD",
+              minimumFractionDigits: 0,
             })}</td>
             <td style="text-align: center"><img src="${
               phone.img
@@ -113,8 +114,8 @@ const getInfo = (id) => {
   // nếu isValid là false thì dừng lại
   if (!isValid) return null;
 
-  // Tạo đối tượng phone từ lớp đối tượng Phone
-  const phone = new Phone(
+  // Tạo đối tượng phone từ lớp đối tượng Products
+  const product = new Products(
     id,
     name,
     price,
@@ -125,7 +126,7 @@ const getInfo = (id) => {
     desc,
     type,
   );
-  return phone;
+  return product;
 };
 
 /* Tạo hàm clear thông tin form */
