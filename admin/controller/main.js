@@ -134,22 +134,26 @@ getEle("searchName").addEventListener("keyup", async () => {
 
 // Từ thấp đến cao
 getEle("sortUp").addEventListener("click", async () => {
+  // đợi callApi trả về giá trị, gán kết quả cho res(result)
   const res = await api.callApi("Products", "GET", null);
+  // nếu API đã trả về dữ liệu thành công
   if (res.status === 200 && res.statusText === "OK") {
     const sortArr = res.data.sort((phone1, phone2) => {
       return phone1.price - phone2.price;
     });
-    renderUI(sortArr);
+    renderUI(sortArr); //render mảng sort
   }
 });
 
 // Từ cao xuống thấp
 getEle("sortDown").addEventListener("click", async () => {
+  // đợi callApi trả về giá trị, gán kết quả cho res(result)
   const res = await api.callApi("Products", "GET", null);
+  // nếu API đã trả về dữ liệu thành công
   if (res.status === 200 && res.statusText === "OK") {
     const sortArr = res.data.sort((phone1, phone2) => {
       return phone2.price - phone1.price;
     });
-    renderUI(sortArr);
+    renderUI(sortArr); //render mảng sort
   }
 });
