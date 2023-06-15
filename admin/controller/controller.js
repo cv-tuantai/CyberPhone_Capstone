@@ -24,7 +24,7 @@ const renderUI = (data) => {
               phone.img
             }" alt="phone" width="80" height="80"/></td>
             <td>${phone.desc}</td>
-            <td>${phone.type === "IP" ? "Apple" : "Samsung"} </td>
+          
             <td style="text-align: center">
                 <button class="btn my-3 mr-1" data-toggle="modal" data-target="#exampleModal" onclick="editPhone(${
                   phone.id

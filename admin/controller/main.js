@@ -158,24 +158,4 @@ getEle("sortDown").addEventListener("click", async () => {
   }
 });
 
-getEle("selLoai").addEventListener("change",async()=>{
-  const value = getEle("selLoai").value;
 
-  const res = await api.callApi(`Products`,"GET",null);
-
-  if(res.status === 200 && res.statusText ==="OK"){
-
-      
-      let mangTimKiem = res.data;
-
-      if(value != "all"){
-        mangTimKiem = res.data.filter((Products)=>{
-
-          return Products.type === value;
-        })
-      
-    }
-    renderUI(mangTimKiem);
-
-}
-})
